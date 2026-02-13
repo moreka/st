@@ -2449,6 +2449,8 @@ strhandle(void)
 				fprintf(stderr, "erresc: %s color not found\n", osc_table[j].str);
 			} else {
 				tfulldirt();
+				if (j == 1)
+					xresetbgalpha(); /* reset background alpha value */
 			}
 			return;
 		}

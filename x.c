@@ -851,6 +851,14 @@ xloadcols(void)
 	loaded = 1;
 }
 
+void
+xresetbgalpha(void)
+{
+	dc.col[defaultbg].color.alpha = (unsigned short)(0xffff * alpha);
+	dc.col[defaultbg].pixel &= 0x00FFFFFF;
+	dc.col[defaultbg].pixel |= (unsigned char)(0xff * alpha) << 24;
+}
+
 int
 xgetcolor(int x, unsigned char *r, unsigned char *g, unsigned char *b)
 {
