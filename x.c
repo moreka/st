@@ -1828,7 +1828,7 @@ void
 xsettitle(char *p, int pop)
 {
  	XTextProperty prop;
- 
+
 	free(titlestack[tstki]);
 	if (pop) {
 		titlestack[tstki] = NULL;
@@ -2323,6 +2323,8 @@ xrdb_load(void)
 
 		XRESOURCE_LOAD_FLOAT("cwscale", cwscale);
 		XRESOURCE_LOAD_FLOAT("chscale", chscale);
+
+		XRESOURCE_LOAD_FLOAT("alpha", alpha);
 	}
 	XFlush(dpy);
 }
